@@ -18,17 +18,6 @@ class _UserDashboardState extends State<UserDashboard> {
   int _currentPage = 0;
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    pageController.addListener(() {
-      setState(() {
-        _currentPage = pageController.page!.toInt();
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -38,6 +27,7 @@ class _UserDashboardState extends State<UserDashboard> {
       child: Scaffold(
         extendBody: true,
         body: PageView(
+          physics: NeverScrollableScrollPhysics(),
           controller: pageController,
           scrollDirection: Axis.horizontal,
           children: [
@@ -60,7 +50,7 @@ class _UserDashboardState extends State<UserDashboard> {
                 5 * SizeConstants.widthMultiplier,
               ),
             ),
-            duration: Duration(milliseconds: 100),
+            duration: Duration(milliseconds: 150),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -70,7 +60,7 @@ class _UserDashboardState extends State<UserDashboard> {
                       _currentPage = 0;
                       pageController.animateToPage(
                         0,
-                        duration: Duration(milliseconds: 100),
+                        duration: Duration(milliseconds: 150),
                         curve: Curves.easeInOut,
                       );
                     });
@@ -92,7 +82,7 @@ class _UserDashboardState extends State<UserDashboard> {
                       _currentPage = 1;
                       pageController.animateToPage(
                         1,
-                        duration: Duration(milliseconds: 100),
+                        duration: Duration(milliseconds: 150),
                         curve: Curves.easeInOut,
                       );
                     });

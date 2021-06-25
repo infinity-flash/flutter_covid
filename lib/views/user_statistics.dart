@@ -202,6 +202,12 @@ class UserStatistics extends StatelessWidget {
                             ),
                           ],
                         ),
+                        Expanded(
+                          child: Image.asset(
+                            'lib/assets/images/temp_graph.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -222,7 +228,12 @@ class UserStatistics extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        Expanded(
+                          child: Image.asset(
+                            'lib/assets/images/water_graph.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                         Row(
                           children: [
                             Text(
@@ -298,7 +309,12 @@ class UserStatistics extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        Expanded(
+                          child: Image.asset(
+                            'lib/assets/images/heart_graph.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                         Row(
                           children: [
                             Text(
@@ -373,6 +389,18 @@ class UserStatistics extends StatelessWidget {
                               size: 4 * SizeConstants.widthMultiplier,
                             ),
                           ],
+                        ),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'No Data Found!',
+                              style: TextStyle(
+                                fontFamily: 'Postmates',
+                                fontSize: 1.3 * SizeConstants.textMultiplier,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),

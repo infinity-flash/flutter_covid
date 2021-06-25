@@ -31,7 +31,12 @@ class BaseTheme extends StatelessWidget {
             return MaterialApp(
               home: UserOnboarding(),
               debugShowCheckedModeBanner: !kReleaseMode,
-              theme: ThemeData.light().copyWith(brightness: Brightness.dark),
+              theme: ThemeData.light().copyWith(
+                brightness: Brightness.dark,
+                bottomSheetTheme: BottomSheetThemeData(
+                  backgroundColor: Colors.transparent,
+                ),
+              ),
             );
           },
         );
